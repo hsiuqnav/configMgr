@@ -16,10 +16,6 @@ libs = [\
 	"ICSharpCode.SharpZipLib.dll",\
 	"LitJson.dll",\
 	"DocumentFormat.OpenXml.dll",\
-	# "Kernel.dll",\
-	# "Kernel.Network.dll",\
-	# "Kernel.Network.Clients.dll",\
-	# "Kernel.Network.Protocols.dll",\
 ]
 
 rsp_template = """
