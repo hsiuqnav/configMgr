@@ -14,12 +14,24 @@ namespace Kernel.Game
 		private const string EXTERNAL_LOG_FILE = "{ExternalFolder}/log/log_{0}.txt";
 		private const string EXTERNAL_XML_CONFIG_FOLDER = "{ExternalFolder}/../config";
 		private const string INTERNAL_BINRAY_CONFIG = "{InitDataFolder}/bin/cs.conf";
+		private const string EXTERNAL_BINARY_CONFIG = "{ExternalFolder}/bin/cs.conf";
+		private const string EXTERNAL_XML_EXAMPLE_FOLDER = "{ExternalFolder}/../config_example";
+
+
 
 		public virtual string BootConfigFolder
 		{
 			get
 			{
 				return Parse(BOOT_CONFIG_FOLDER);
+			}
+		}
+
+		public virtual string ExternalBinaryConfig
+		{
+			get
+			{
+				return Parse(EXTERNAL_BINARY_CONFIG);
 			}
 		}
 
@@ -62,6 +74,14 @@ namespace Kernel.Game
 			get
 			{
 				return Parse(EXTERNAL_XML_CONFIG_FOLDER);
+			}
+		}
+
+		public virtual string ExternalXmlExampleFolder
+		{
+			get
+			{
+				return Parse(EXTERNAL_XML_EXAMPLE_FOLDER);
 			}
 		}
 

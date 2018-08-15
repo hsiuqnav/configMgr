@@ -32,7 +32,7 @@ namespace Alche.Runtime
             this.targetNamespaces = targetNamespaces != null ? targetNamespaces.Trim('"').Split(';') : null;
         }
 
-        public void Start()
+        private void Start()
         {
             ConfigManager.Instance.SetSerializer(new ConfigSerializer());
             List<Type> allTypes = GetType().Assembly.GetTypes().ToList();

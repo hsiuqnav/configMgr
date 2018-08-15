@@ -19,6 +19,21 @@ namespace Kernel.Game
 			}
 		}
 
+		public string ExternalXmlExampleFolder
+		{
+			get
+			{
+				return PathModule.ExternalXmlExampleFolder;
+			}
+		}
+
+		public string ExternalBinaryConfig
+		{
+			get
+			{
+				return PathModule.ExternalBinaryConfig;
+			}
+		}
 
 		public string BootConfigFolder
 		{

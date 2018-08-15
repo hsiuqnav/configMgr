@@ -300,5 +300,13 @@ namespace Kernel.Config
 			}
 			return null;
 		}
+
+		internal void SetConfigWithExample(Type elemType, object example)
+		{
+			if (readerModule != null)
+			{
+				readerModule.SetConfigWithExample(elemType, example);
+			}
+		}
 	}
 }

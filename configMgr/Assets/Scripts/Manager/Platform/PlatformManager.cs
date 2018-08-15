@@ -34,6 +34,11 @@ namespace Kernel
 			}
 		}
 
+		public Stream OpenWrite(string path)
+		{
+			return PlatformModule.OpenWrite(path);
+		}
+
 		public bool CreateParentDirectoryIfNeed(string file)
 		{
 			return PlatformModule.CreateParentDirectoryIfNeed(file);

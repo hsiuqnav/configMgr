@@ -17,7 +17,7 @@
 		{
 			get
 			{
-				return GetFullPath("../../resource/content");
+				return GetFullPath("../resource/content");
 			}
 		}
 

@@ -113,6 +113,11 @@ namespace Kernel
 			return path != null && File.Exists(path);
 		}
 
+		public virtual Stream OpenWrite(string path)
+		{
+			return new FileStream(path, FileMode.Create);
+		}
+
 		public virtual string[] GetDirectories(string path, string searchPattern = "*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
 		{
 			if(!Directory.Exists(path))
