@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfHeros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConfHero>
+    <Id>0</Id>
+    <HeroName> </HeroName>
+    <HeroDesc> </HeroDesc>
+    <Hp>0</Hp>
+    <Attack>0</Attack>
+  </ConfHero>
+  <ConfHero>
+    <Id>0</Id>
+    <HeroName> </HeroName>
+    <HeroDesc> </HeroDesc>
+    <Hp>0</Hp>
+    <Attack>0</Attack>
+  </ConfHero>
+</ConfHeros>

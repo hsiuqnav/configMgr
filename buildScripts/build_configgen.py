@@ -183,7 +183,7 @@ if __name__ == '__main__':
 		print(result)
 		
 		build_binary_maker(result)
-		# copy_maker_to_tool()
+		copy_maker_to_tool()
 		copy_codes()
 		os.system('pause')
 	except:
