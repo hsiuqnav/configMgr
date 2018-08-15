@@ -1,10 +1,6 @@
 ﻿using System;
 using System.IO;
 using Kernel.Runtime;
-#if UNITY_EDITOR
-using UnityEditor;
-
-#endif
 
 namespace Kernel.Game
 {
@@ -68,18 +64,10 @@ namespace Kernel.Game
 		{
 			get
 			{
-#if UNITY_EDITOR
 				if (pathModule == null)
 				{
-#if UNITY_ANDROID
-					pathModule = new AndroidPathModule();
-#elif UNITY_IOS
-					pathModule = new IOSPathModule();
-#else
 					pathModule = new EditorPathModule();
-#endif
 				}
-#endif
 				return pathModule;
 			}
 

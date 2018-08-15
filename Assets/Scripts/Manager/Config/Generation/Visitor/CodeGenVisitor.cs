@@ -57,7 +57,6 @@ namespace Kernel.Config
             builder.WriteLine("// Auto generated code");
             builder.WriteLine("using Kernel;");
             builder.WriteLine("using Kernel.Config;");
-            builder.WriteLine("using Kernel.Engine;");
             builder.WriteLine("using Kernel.Util;");
             builder.WriteLine("using System;");
             builder.WriteLine("using System.IO;");
@@ -388,9 +387,6 @@ namespace Kernel.Config
                     break;
                 case SerializeNode.NodeCategory.ENUM:
                     VisitEnumDeserialization(reader, node, builder);
-                    break;
-                case SerializeNode.NodeCategory.FIXED:
-                    VisitFixedDeserialization(reader, node, builder);
                     break;
                 case SerializeNode.NodeCategory.TIMESPAN:
                     VisitTimeSpanDeserialization(reader, node, builder);
@@ -734,9 +730,6 @@ namespace Kernel.Config
                     break;
                 case SerializeNode.NodeCategory.ENUM:
                     VisitEnumSerialization(variable, writer, builder);
-                    break;
-                case SerializeNode.NodeCategory.FIXED:
-                    VisitFixedSerialization(variable, writer, builder);
                     break;
                 case SerializeNode.NodeCategory.TIMESPAN:
                     VisitTimeSpanSerialization(variable, writer, builder);

@@ -549,7 +549,6 @@ namespace Kernel.Config
             CLASS,
             POLY_CLASS,
             STRUCT,
-            FIXED,
             ARRAY,
             LIST,
             DICTIONARY,

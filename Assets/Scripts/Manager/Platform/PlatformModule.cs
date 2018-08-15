@@ -61,6 +61,44 @@ namespace Kernel
 			}
 		}
 
+		public virtual bool ClearDirectory(string folder, string extension = null)
+		{
+			try
+			{
+				foreach (var file in Directory.GetFiles(folder))
+				{
+					if (extension == null || file.EndsWith(extension))
+					{
+						RemoveFileIfExists(file);
+					}
+				}
+				return true;
+			}
+			catch (Exception ex)
+			{
+				Logger.Trace("ClearDirectory {0} failed: {1}", folder, ex);
+				return false;
+			}
+		}
+
+		public virtual bool RemoveFileIfExists(string file)
+		{
+			try
+			{
+				if (File.Exists(file))
+				{
+					RemoveReadonlyAttribute(file);
+					File.Delete(file);
+					return true;
+				}
+				return false;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
 		public virtual bool DirectoryExists(string path)
 		{
 			if(path == null)
@@ -69,7 +107,6 @@ namespace Kernel
 			}
 			return Directory.Exists(path);
 		}
-
 
 		public virtual bool FileExists(string path)
 		{

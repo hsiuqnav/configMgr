@@ -22,12 +22,10 @@ namespace Kernel
 		{
 			get
 			{
-#if UNITY_EDITOR
 				if(platformModule == null)
 				{
 					platformModule = new UnityEditorPlatformModule();
 				}
-#endif
 				return platformModule;
 			}
 			set
@@ -40,6 +38,12 @@ namespace Kernel
 		{
 			return PlatformModule.CreateParentDirectoryIfNeed(file);
 		}
+
+		public bool ClearDirectory(string path, string extension = null)
+		{
+			return PlatformModule.ClearDirectory(path, extension);
+		}
+
 
 		public bool FileExists(string path)
 		{
