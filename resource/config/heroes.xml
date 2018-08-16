@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConfHeros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ConfHero>
+		<Id>107</Id>
+		<HeroName>泰兰德</HeroName>
+		<HeroDesc>月神殿的大祭司、月神的代言人、达纳苏斯的统治者、万年的灰谷保卫者</HeroDesc>
+		<Hp>635</Hp>
+		<Attack>30</Attack>
+	</ConfHero>
+	<ConfHero>
+		<Id>108</Id>
+		<HeroName>迪亚波罗</HeroName>
+		<HeroDesc>恐惧魔王、地狱三魔神之一</HeroDesc>
+		<Hp>1060</Hp>
+		<Attack>49</Attack>
+	</ConfHero>
+	<ConfHero>
+		<Id>109</Id>
+		<HeroName>弗斯塔德</HeroName>
+		<HeroDesc>蛮锤氏族的大族长、铁炉堡三锤议会的成员</HeroDesc>
+		<Hp>710</Hp>
+		<Attack>34</Attack>
+	</ConfHero>
+</ConfHeros>

@@ -264,10 +264,6 @@ namespace Kernel.Config
 			readerModule = AddModule<ConfigReaderModule>(new BootConfigReaderModule(PathManager.Instance.BootConfigFolder,
 				PathManager.Instance.InternalBootConfigFolder));
 			readerModule.SetSerializer(serializer);
-
-			//LocaleReader.Clear();
-			//LocaleReader.AddLocaleFromFolder(PathManager.Instance.BootLocaleFolder);
-			//LocaleReader.AddLocaleFromFolder(PathManager.Instance.ChangeToExternalPath(PathManager.Instance.BootLocaleFolder));
 		}
 
 		protected override void OnBoot()
@@ -276,9 +272,6 @@ namespace Kernel.Config
 			readerModule = AddModule<ConfigReaderModule>();
 			readerModule.SetSerializer(serializer);
 			readerModule.CopyConfigData(oldModule);
-
-			//LocaleReader.AddLocaleFromFolder(PathManager.Instance.InternalLocaleFolder);
-			//LocaleReader.AddLocaleFromFolder(PathManager.Instance.ChangeToExternalPath(PathManager.Instance.InternalLocaleFolder));
 		}
 
 		protected override void OnShutdown()

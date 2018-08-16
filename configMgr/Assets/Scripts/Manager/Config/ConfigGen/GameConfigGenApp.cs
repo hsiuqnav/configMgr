@@ -11,7 +11,7 @@ namespace Alche.Runtime
 {
 	public class GameConfigGenApp
 	{
-		private bool readXmlThread;
+		private bool isReadXmlThread;
 
 		public static void Main(string[] args)
 		{
@@ -25,26 +25,40 @@ namespace Alche.Runtime
 			app.Start();
 		}
 
-		public GameConfigGenApp(bool readXmlThread)
+		public GameConfigGenApp(bool isReadXmlThread)
 		{
-			this.readXmlThread = readXmlThread;
+			this.isReadXmlThread = isReadXmlThread;
+			ModuleManager.Instance.RegisterModule(typeof(BasePathModule), () => new CommandLinePathModule("../../content"));
+			ModuleManager.Instance.RegisterModule(typeof(PlatformModule), () => new CommandLinePlatformModule());
+			ModuleManager.Instance.RegisterModule(typeof(ConfigReaderModule),
+				() => new XmlConfigReaderModule(PathManager.Instance.ExternalXmlConfigFolder, isReadXmlThread));
 		}
 
 		private void Start()
 		{
+			ManagerMan.Instance.RegisterManager(PlatformManager.Instance);
+			ManagerMan.Instance.RegisterManager(PathManager.Instance);
+			ManagerMan.Instance.RegisterManager(WorksManager.Instance);
+			ManagerMan.Instance.RegisterManager(ConfigManager.Instance);
+			ManagerMan.Instance.InitAllManagers();
+			ManagerMan.Instance.BootAllManagers();
+
 			ConfigSerializer serializer = new ConfigSerializer();
 			ConfigManager.Instance.SetSerializer(serializer);
-			ConfigManager.Instance.ReloadConfigReaderModule(new XmlConfigReaderModule(string.Format("{0}/../config", Path.GetFullPath("../../content")), readXmlThread));
+			ConfigManager.Instance.ReloadConfigReaderModule(new XmlConfigReaderModule(PathManager.Instance.ExternalXmlConfigFolder, isReadXmlThread));
+			//ConfigManager.Instance.ReloadConfigReaderModule(new XmlConfigReaderModule(string.Format("{0}/../config", Path.GetFullPath("../../content")), isReadXmlThread));
 
-			//using (BinWriter o = new BinWriter(PlatformManager.Instance.OpenWrite(PathManager.Instance.ExternalBinaryConfig), Encoding.UTF8))
-			using (BinWriter o = new BinWriter(PlatformManager.Instance.OpenWrite(string.Format("{0}/bin/cs.conf", Path.GetFullPath("../../content"))), Encoding.UTF8))
+			using (BinWriter o = new BinWriter(PlatformManager.Instance.OpenWrite(PathManager.Instance.ExternalBinaryConfig), Encoding.UTF8))
+			//using (BinWriter o = new BinWriter(PlatformManager.Instance.OpenWrite(string.Format("{0}/bin/cs.conf", Path.GetFullPath("../../content"))), Encoding.UTF8))
 			{
 				ConfigManager.Instance.LoadAllConfig();
 				serializer.WriteToBinary(o);
 			}
-            var externalXmlExampleFolder = string.Format("{0}/../config_example", Path.GetFullPath("../../content"));
-			PlatformManager.Instance.ClearDirectory(externalXmlExampleFolder);
-			new ConfigExampleBuilder().WriteExampleConfig(serializer, externalXmlExampleFolder);
+			PlatformManager.Instance.ClearDirectory(PathManager.Instance.ExternalXmlExampleFolder);
+			new ConfigExampleBuilder().WriteExampleConfig(serializer, PathManager.Instance.ExternalXmlExampleFolder);
+			//var externalXmlExampleFolder = string.Format("{0}/../config_example", Path.GetFullPath("../../content"));
+			//PlatformManager.Instance.ClearDirectory(externalXmlExampleFolder);
+			//new ConfigExampleBuilder().WriteExampleConfig(serializer, externalXmlExampleFolder);
 		}
 	}
 }
