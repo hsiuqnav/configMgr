@@ -43,19 +43,14 @@ namespace Alche.Runtime
 			ConfigSerializer serializer = new ConfigSerializer();
 			ConfigManager.Instance.SetSerializer(serializer);
 			ConfigManager.Instance.ReloadConfigReaderModule(new XmlConfigReaderModule(PathManager.Instance.ExternalXmlConfigFolder, readXmlThread));
-			//ConfigManager.Instance.ReloadConfigReaderModule(new XmlConfigReaderModule(string.Format("{0}/../config", Path.GetFullPath("../../content")), isReadXmlThread));
 
 			using (BinWriter o = new BinWriter(PlatformManager.Instance.OpenWrite(PathManager.Instance.ExternalBinaryConfig), Encoding.UTF8))
-			//using (BinWriter o = new BinWriter(PlatformManager.Instance.OpenWrite(string.Format("{0}/bin/cs.conf", Path.GetFullPath("../../content"))), Encoding.UTF8))
 			{
 				ConfigManager.Instance.LoadAllConfig();
 				serializer.WriteToBinary(o);
 			}
 			PlatformManager.Instance.ClearDirectory(PathManager.Instance.ExternalXmlExampleFolder);
 			new ConfigExampleBuilder().WriteExampleConfig(serializer, PathManager.Instance.ExternalXmlExampleFolder);
-			//var externalXmlExampleFolder = string.Format("{0}/../config_example", Path.GetFullPath("../../content"));
-			//PlatformManager.Instance.ClearDirectory(externalXmlExampleFolder);
-			//new ConfigExampleBuilder().WriteExampleConfig(serializer, externalXmlExampleFolder);
 		}
 	}
 }

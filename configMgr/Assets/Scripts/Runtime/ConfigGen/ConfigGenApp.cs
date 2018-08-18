@@ -6,7 +6,7 @@ using System;
 
 namespace Alche.Runtime
 {
-	public class ConfigGenApp : CommandLineApp
+	public partial class ConfigGenApp : CommandLineApp
 	{
 		private readonly bool readXmlThread;
 
