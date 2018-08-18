@@ -15,7 +15,7 @@ namespace GeneratedCode
 		
 		public override ConfigFieldInfo[] Fields { get { return fields; } }
 		
-		public override string Hash { get { return "f501f93cf4c4e652e46d7d6d5dde678c"; } }
+		public override string Hash { get { return "52a80915efda7b835558b6ac25e4f3bb"; } }
 		
 		private static readonly Dictionary<Type, IConfigSerializer> serializers = new Dictionary<Type, IConfigSerializer>
 		{
@@ -29,6 +29,7 @@ namespace GeneratedCode
 			{ typeof(System.Collections.Generic.Dictionary<System.Int32,Config.ConfHero>), new Dictionary_Int32_ConfHeroSerializer() },
 			{ typeof(System.Collections.Generic.Dictionary<System.Int32,System.Int32>), new Dictionary_Int32_Int32Serializer() },
 			{ typeof(System.Collections.Generic.Dictionary<System.String,System.Int32>), new Dictionary_String_Int32Serializer() },
+			{ typeof(System.DateTime), new DateTimeSerializer() },
 			{ typeof(System.String), new StringSerializer() },
 		};
 		

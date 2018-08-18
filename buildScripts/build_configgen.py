@@ -123,7 +123,7 @@ def build_codegen(dirs, disableExcel = False):
 	excelBuildParam = "-r:WPF/WindowsBase.dll"
 	if disableExcel:
 		excelBuildParam = "-define:DISABLE_EXCEL_BUILDER"
-	exec_build(rsp_template % ("GameCodeGenApp", excelBuildParam, codegen_exe_out, dirs, lib))
+	exec_build(rsp_template % ("CodeGenApp", excelBuildParam, codegen_exe_out, dirs, lib))
 	os.chdir(cur_path)
 
 def run_code_gen(targetNamespaces = ""):
@@ -134,7 +134,7 @@ def build_binary_maker(dirs):
 	print ('build config_binary_maker')
 	os.chdir(src_path)
 	lib = list_dlls(temp_folder, libs)
-	exec_build(rsp_template % ("GameConfigGenApp", "-define:DISABLE_EXCEL_BUILDER", configgen_exe_out, dirs, lib))
+	exec_build(rsp_template % ("ConfigGenApp", "-define:DISABLE_EXCEL_BUILDER", configgen_exe_out, dirs, lib))
 	os.chdir(cur_path)
 
 def copy_maker_to_tool():

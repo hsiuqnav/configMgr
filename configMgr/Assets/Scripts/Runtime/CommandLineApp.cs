@@ -1,11 +1,14 @@
 ﻿
+using Alche.Runtime;
+using Kernel.Game;
+
 namespace Kernel.Runtime
 {
 	public abstract class CommandLineApp : IApp
 	{
 		static CommandLineApp()
 		{
-			XmlUtil.InitDerivedClassList(typeof(CommandLineApp));
+			//XmlUtil.InitDerivedClassList(typeof(CommandLineApp));
 		}
 
 		public float DeltaTime
@@ -30,22 +33,28 @@ namespace Kernel.Runtime
 			private set;
 		}
 
+		public CommandLineApp()
+		{
+			ModuleManager.Instance.RegisterModule(typeof(PlatformModule), () => new CommandLinePlatformModule());
+			ModuleManager.Instance.RegisterModule(typeof(BasePathModule), () => new CommandLinePathModule("../../content"));
+		}
+
 		public virtual void Awake()
 		{
 			Running = true;
-			//Game.Instance.Init(CreateEnterState(Game.Instance), this);
+			Game.Instance.Init(CreateEnterState(Game.Instance), this);
 		}
 
 		public void Update()
 		{
-			//Game.Instance.Tick(DeltaTime);
-			//if (Game.Instance.GetFSMState() is GameQuitState)
-			//	Running = false;
+			Game.Instance.Tick(DeltaTime);
+			if (Game.Instance.GetFSMState() is GameQuitState)
+				Running = false;
 		}
 
 		public void LateUpdate()
 		{
-			//Game.Instance.LateTick();
+			Game.Instance.LateTick();
 		}
 
 		public void OnApplicationPause(bool pause)
@@ -60,9 +69,11 @@ namespace Kernel.Runtime
 
 		public void OnApplicationQuit()
 		{
-			//Logger.RemoveAppender<CommandLineLogSpi>();
 		}
 
-		//protected abstract GameFSMState CreateEnterState(Game game);
+		protected virtual GameFSMState CreateEnterState(Game game)
+		{
+			return new GameInitState(game);
+		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using Kernel.Config;
 using Kernel.Lang.Attribute;
+using System;
 
 namespace Config
 {
@@ -20,5 +21,8 @@ namespace Config
 
 		[Comment("英雄攻击力")]
 		public float Attack;
+
+		[Comment("生日")]
+		public DateTime BirthDay;
 	}
 }

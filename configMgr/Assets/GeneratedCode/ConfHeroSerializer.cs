@@ -20,6 +20,7 @@ namespace GeneratedCode
 			
 			if(d == null) d = new Config.ConfHero();
 			d.Attack = o.ReadSingle();
+			d.BirthDay = TimeUtil.CTimeToUtcDate(o.ReadInt64());
 			d.HeroDesc = StringSerializer.Read(o, d.HeroDesc as string) as string;
 			d.HeroName = StringSerializer.Read(o, d.HeroName as string) as string;
 			d.Hp = o.ReadSingle();
@@ -38,6 +39,7 @@ namespace GeneratedCode
 			if(d == null) return;
 			
 			o.Write(d.Attack);
+			o.Write((long)TimeUtil.LocalDateToCTime(d.BirthDay));
 			StringSerializer.Write(o, d.HeroDesc);
 			StringSerializer.Write(o, d.HeroName);
 			o.Write(d.Hp);

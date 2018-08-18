@@ -49,6 +49,10 @@ namespace Kernel
 			return PlatformModule.ClearDirectory(path, extension);
 		}
 
+		public void QuitGame()
+		{
+			PlatformModule.QuitGame();
+		}
 
 		public bool FileExists(string path)
 		{
