@@ -7,6 +7,7 @@
 		<HeroDesc>月神殿的大祭司、月神的代言人、达纳苏斯的统治者、万年的灰谷保卫者</HeroDesc>
 		<Hp>635</Hp>
 		<Attack>30</Attack>
+		<BirthDay>1981-01-01T00:00:00</BirthDay>
 	</ConfHero>
 	<ConfHero>
 		<Id>108</Id>
@@ -14,6 +15,7 @@
 		<HeroDesc>恐惧魔王、地狱三魔神之一</HeroDesc>
 		<Hp>1060</Hp>
 		<Attack>49</Attack>
+		<BirthDay>1986-05-15T08:00:00</BirthDay>
 	</ConfHero>
 	<ConfHero>
 		<Id>109</Id>
@@ -21,5 +23,6 @@
 		<HeroDesc>蛮锤氏族的大族长、铁炉堡三锤议会的成员</HeroDesc>
 		<Hp>710</Hp>
 		<Attack>34</Attack>
+		<BirthDay>2011-11-01T11:00:00</BirthDay>
 	</ConfHero>
 </ConfHeros>
