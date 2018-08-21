@@ -2,7 +2,9 @@
 using Kernel.Config;
 using Kernel.Game;
 using Kernel.Runtime;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace Alche.Runtime
 {
@@ -16,6 +18,7 @@ namespace Alche.Runtime
 				() => new XmlConfigReaderModule(PathManager.Instance.ExternalXmlConfigFolder, false));
 		}
 
+#if UNITY_EDITOR
 		[MenuItem("Test/ConfigGenApp")]
 		public static void Test()
 		{
@@ -27,5 +30,6 @@ namespace Alche.Runtime
 				app.LateUpdate();
 			}
 		}
+#endif
 	}
 }

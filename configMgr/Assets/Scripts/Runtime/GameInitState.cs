@@ -29,14 +29,19 @@ namespace Alche.Runtime
 			ManagerMan.Instance.RegisterManager(PlatformManager.Instance);
 			ManagerMan.Instance.RegisterManager(WorksManager.Instance);
 			ManagerMan.Instance.RegisterManager(ModuleManager.Instance);
+			ManagerMan.Instance.RegisterManager(ConfigManager.Instance);
 			ManagerMan.Instance.InitAllManagers();
-
-			base.OnEnter(e, lastState);
+			ManagerMan.Instance.BootAllManagers();
+			initWork = new StartAndWait(ManagerMan.Instance.BootLoadAllManagers());
+			WorksManager.Instance.AddStartRightAwayWork(initWork);
 		}
 
 		protected override GameFSM.State DoTick(float deltaTime)
 		{
-			// todo jump to next state
+			if (IsFinished)
+			{
+				return new GameUnityState(Content);
+			}
 			return this;
 		}
 	}

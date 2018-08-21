@@ -125,6 +125,7 @@ namespace Kernel.Config
 			}
 
 			ConfigManager.Instance.LoadAllConst();
+			Logger.Trace("OpenAndLoadHeader");
 		}
 
 		protected override void OnUnload()

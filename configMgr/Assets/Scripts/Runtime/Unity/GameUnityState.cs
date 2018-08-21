@@ -1,4 +1,5 @@
-﻿using GeneratedCode;
+﻿using Config;
+using GeneratedCode;
 using Kernel;
 using Kernel.Config;
 using Kernel.FSM;
@@ -9,6 +10,7 @@ namespace Alche.Runtime
 {
 	public class GameUnityState : GameFSMState
 	{
+		private CommonWork bootLoadWork;
 		public GameUnityState(Game content) : base(content)
 		{
 
@@ -16,15 +18,11 @@ namespace Alche.Runtime
 
 		protected override void OnEnter(Event e, GameFSM.State lastState)
 		{
-			ConfigManager.Instance.SetSerializer(new ConfigSerializer());
-			ManagerMan.Instance.RegisterManager(PathManager.Instance);
-			ManagerMan.Instance.RegisterManager(PlatformManager.Instance);
-			ManagerMan.Instance.RegisterManager(WorksManager.Instance);
-			ManagerMan.Instance.RegisterManager(ModuleManager.Instance);
-			ManagerMan.Instance.RegisterManager(ConfigManager.Instance);
-			ManagerMan.Instance.InitAllManagers();
-			ManagerMan.Instance.BootAllManagers();
-			base.OnEnter(e, lastState);
+			var hero = ConfigManager.Instance.GetConfig<ConfHero>(107);
+			if (hero != null)
+			{
+				Logger.Info(hero.ToString());
+			}
 		}
 	}
 }

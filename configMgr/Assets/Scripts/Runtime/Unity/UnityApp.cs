@@ -1,4 +1,5 @@
-﻿using Kernel.Runtime;
+﻿using Kernel.Config;
+using Kernel.Runtime;
 using UnityEngine;
 
 namespace Alche.Runtime
@@ -32,6 +33,7 @@ namespace Alche.Runtime
 
 		public void Awake()
 		{
+			ModuleManager.Instance.RegisterModule(typeof(ConfigReaderModule), () => new BinaryConfigReaderModule());
 			Game.Instance.Init(CreateEnterState(Game.Instance), this);
 		}
 
@@ -63,7 +65,7 @@ namespace Alche.Runtime
 
 		protected GameFSMState CreateEnterState(Game content)
 		{
-			return new GameUnityState(content);
+			return new GameInitState(content);
 		}
 	}
 }

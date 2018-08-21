@@ -24,5 +24,10 @@ namespace Config
 
 		[Comment("生日")]
 		public DateTime BirthDay;
+
+		public override string ToString()
+		{
+			return string.Format("Id : {0}, HeroName : {1}, HeroDesc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, HeroName, HeroDesc, Hp, Attack, BirthDay);
+		}
 	}
 }
