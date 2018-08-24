@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Kernel.Lang.Attribute;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace Kernel.Config
 {
@@ -45,6 +47,49 @@ namespace Kernel.Config
 			{
 				return false;
 			}
+		}
+
+		public void Validate()
+		{
+			if (Fields == null || Fields.Length == 0)
+			{
+				return;
+			}
+			for(var i = 0; i < Fields.Length; ++i)
+			{
+				var f = Fields[i];
+				var serializeFields = GetSerializedFields(f.ElemType);
+				for(var j = 0; j < serializeFields.Count; ++j)
+				{
+					var attri = TypeUtil.GetCustomAttribute<ValidateAttribute>(serializeFields[j], true);
+					if (attri != null)
+					{
+						var configArrayValue = ConfigManager.Instance.GetConfig(f.ElemType) as IDictionary;
+						var e = configArrayValue.GetEnumerator();
+						while (e.MoveNext())
+						{
+							var configValue = e.Value;
+							var fieldValue = serializeFields[j].GetValue(configValue);
+							if (!attri.Validate(serializeFields[j], fieldValue, f.ElemType, configValue, f.Name))
+							{
+								return;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		private List<FieldInfo> GetSerializedFields(Type type)
+		{
+			var attributes = new[]
+			{
+				typeof(NonSerializedAttribute)
+			};
+			var fields = TypeUtil.GetPublicInstanceFieldsExcept(type, attributes);
+			fields.RemoveAll(o => TypeUtil.IsDelegation(o.FieldType));
+			fields.Sort((a, b) => string.CompareOrdinal(a.Name, b.Name));
+			return fields;
 		}
 
 		public void WriteToBinary(BinWriter writer)

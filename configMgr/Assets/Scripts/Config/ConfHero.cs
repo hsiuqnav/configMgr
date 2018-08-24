@@ -8,6 +8,7 @@ namespace Config
 	public class ConfHero
 	{
 		[Comment("Id")]
+		[Id]
 		public int Id;
 
 		[Comment("英雄名")]
