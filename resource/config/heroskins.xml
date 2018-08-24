@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConfHeroSkins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ConfHeroSkin>
+		<Id>1</Id>
+		<HeroId>107</HeroId>
+		<Desc>守望者</Desc>
+	</ConfHeroSkin>
+	<ConfHeroSkin>
+		<Id>2</Id>
+		<HeroId>107</HeroId>
+		<Desc>鹰眼</Desc>
+	</ConfHeroSkin>
+</ConfHeroSkins>

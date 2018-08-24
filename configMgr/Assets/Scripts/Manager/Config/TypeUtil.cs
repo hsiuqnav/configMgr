@@ -984,6 +984,18 @@ namespace Kernel
 		{
 			return type.BaseType;
 		}
+
+		public static List<FieldInfo> GetSerializedFields(Type type)
+		{
+			var attributes = new[]
+			{
+				typeof(NonSerializedAttribute)
+			};
+			var fields = TypeUtil.GetPublicInstanceFieldsExcept(type, attributes);
+			fields.RemoveAll(o => TypeUtil.IsDelegation(o.FieldType));
+			fields.Sort((a, b) => string.CompareOrdinal(a.Name, b.Name));
+			return fields;
+		}
 	}
 }
 

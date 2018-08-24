@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfHeroSkins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConfHeroSkin>
+    <Id>0</Id>
+    <HeroId>0</HeroId>
+    <Desc> </Desc>
+  </ConfHeroSkin>
+  <ConfHeroSkin>
+    <Id>0</Id>
+    <HeroId>0</HeroId>
+    <Desc> </Desc>
+  </ConfHeroSkin>
+</ConfHeroSkins>
