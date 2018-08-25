@@ -87,8 +87,7 @@ namespace Kernel.Config
                 DictionaryConfigAttribute dictAttr = attribute as DictionaryConfigAttribute;
                 WriteFieldEntry(builder, configType, attribute.Name ?? ConfigManager.Instance.GetDefaultConfigFileName(configType),
                     dictAttr != null ? dictAttr.Key : null,
-                    dictAttr != null && dictAttr.LoadAll,
-                    attribute.Boot);
+                    dictAttr != null && dictAttr.LoadAll);
             }
         }
 
@@ -99,19 +98,18 @@ namespace Kernel.Config
                 node.Header.SerializerTypeName);
         }
 
-        private static void WriteFieldEntry(TextBuilder builder, Type configType, string name, string key, bool loadAll, bool boot)
+        private static void WriteFieldEntry(TextBuilder builder, Type configType, string name, string key, bool loadAll)
         {
             bool isDict = TypeUtil.IsDictionary(configType);
 
             Type elemType = isDict ? TypeUtil.GetDictionaryValueType(configType) : configType;
-            builder.WriteLine("new ConfigFieldInfo(\"{0}\", typeof({1}), typeof({2}), ConfigFieldInfo.Mode.{3}, {4}, \"{5}\", {6}),",
+            builder.WriteLine("new ConfigFieldInfo(\"{0}\", typeof({1}), typeof({2}), ConfigFieldInfo.Mode.{3}, {4}, \"{5}\"),",
                 name,
                 TypeUtil.GetCSharpFullTypeName(configType),
                 TypeUtil.GetCSharpFullTypeName(elemType),
                 isDict ? "KEY_VALUE" : "CONST",
                 loadAll.ToString().ToLower(),
-                key,
-                boot ? "true" : "false");
+                key);
         }
     }
 }

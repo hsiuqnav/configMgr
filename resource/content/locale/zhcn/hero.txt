@@ -4,3 +4,7 @@ Hero.Desc.Diablo
 恐惧魔王、地狱三魔神之一
 Hero.Desc.Falstad
 蛮锤氏族的大族长、铁炉堡三锤议会的成员
+Hero.Skin.Tyrande.1
+守望者
+Hero.Skin.Tyrande.2
+鹰眼

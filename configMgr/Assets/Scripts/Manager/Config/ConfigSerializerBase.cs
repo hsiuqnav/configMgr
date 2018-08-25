@@ -33,28 +33,13 @@ namespace Kernel.Config
 			}
 		}
 
-		public virtual string LuaConfigTemplate
-		{
-			get
-			{
-				return null;
-			}
-		}
-
-		public virtual bool IsLuaSerializer
-		{
-			get
-			{
-				return false;
-			}
-		}
-
 		public bool Validate()
 		{
 			if (Fields == null || Fields.Length == 0)
 			{
 				return true;
 			}
+			var result = true;
 			for(var i = 0; i < Fields.Length; ++i)
 			{
 				var f = Fields[i];
@@ -76,13 +61,13 @@ namespace Kernel.Config
 							var fieldValue = serializeFields[j].GetValue(configValue);
 							if (!attri.Validate(serializeFields[j], fieldValue, f.ElemType, configValue, f.Name, Fields))
 							{
-								return false;
+								result = false;
 							}
 						}
 					}
 				}
 			}
-			return true;
+			return result;
 		}
 
 		public void WriteToBinary(BinWriter writer)

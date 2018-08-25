@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 using Kernel.Util;
 using Kernel.Lang.Attribute;
+using Kernel.Config;
 
 namespace Kernel
 {
@@ -995,6 +996,30 @@ namespace Kernel
 			fields.RemoveAll(o => TypeUtil.IsDelegation(o.FieldType));
 			fields.Sort((a, b) => string.CompareOrdinal(a.Name, b.Name));
 			return fields;
+		}
+
+		public static object FindConfigKeyValue(Type t, object v)
+		{
+			var dictionaryAttri = TypeUtil.GetCustomAttribute<DictionaryConfigAttribute>(t, false);
+			if (dictionaryAttri == null)
+			{
+				return null;
+			}
+			var keyName = dictionaryAttri.Key;
+			var field = t.GetField(keyName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+			if (field == null)
+			{
+				var property = t.GetProperty(keyName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+				if (property == null)
+				{
+					return null;
+				}
+				return property.GetValue(v, null);
+			}
+			else
+			{
+				return field.GetValue(v);
+			}
 		}
 	}
 }

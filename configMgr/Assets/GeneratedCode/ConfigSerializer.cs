@@ -10,14 +10,14 @@ namespace GeneratedCode
 	{
 		private static readonly ConfigFieldInfo[] fields =
 		{
-			new ConfigFieldInfo("heroes", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHero>), typeof(Config.ConfHero), ConfigFieldInfo.Mode.KEY_VALUE, true, "Id", false),
-			new ConfigFieldInfo("heroskins", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHeroSkin>), typeof(Config.ConfHeroSkin), ConfigFieldInfo.Mode.KEY_VALUE, true, "Id", false),
-			new ConfigFieldInfo("actions", typeof(System.Collections.Generic.Dictionary<string,Config.ConfAction>), typeof(Config.ConfAction), ConfigFieldInfo.Mode.KEY_VALUE, true, "ActionName", false),
+			new ConfigFieldInfo("heroes", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHero>), typeof(Config.ConfHero), ConfigFieldInfo.Mode.KEY_VALUE, true, "Id"),
+			new ConfigFieldInfo("heroskins", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHeroSkin>), typeof(Config.ConfHeroSkin), ConfigFieldInfo.Mode.KEY_VALUE, true, "Id"),
+			new ConfigFieldInfo("actions", typeof(System.Collections.Generic.Dictionary<string,Config.ConfAction>), typeof(Config.ConfAction), ConfigFieldInfo.Mode.KEY_VALUE, true, "ActionName"),
 		};
 		
 		public override ConfigFieldInfo[] Fields { get { return fields; } }
 		
-		public override string Hash { get { return "58633842c51fa21d5c5949a4c17440fa"; } }
+		public override string Hash { get { return "e75392f3e74c1598e7b4c5bbb9715b3c"; } }
 		
 		private static readonly Dictionary<Type, IConfigSerializer> serializers = new Dictionary<Type, IConfigSerializer>
 		{

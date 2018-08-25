@@ -3,10 +3,9 @@ using Kernel.Lang.Attribute;
 
 namespace Config
 {
-	[DictionaryConfig(Name = "actions", ExportPolicy = ConfigExportPolicy.EXPORT_TO_BOTH, LoadAll = true, Key = "ActionName")]
+	[DictionaryConfig(Name = "actions", Key = "ActionName")]
 	public class ConfAction
 	{
-		[Id]
 		public string ActionName;
 		public float ActionLength;
 

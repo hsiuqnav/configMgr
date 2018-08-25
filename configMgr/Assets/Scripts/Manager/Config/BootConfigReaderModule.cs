@@ -35,8 +35,8 @@ namespace Kernel.Config
 			if (!bootOnly) return;
 
 			ResetConfigData();
-			ReadJson(Serializer.Fields.Where(f => f.Boot), (name, type) => GetFilesFromFolder(bootFolder, name, ".json"));
-			ReadJson(Serializer.Fields.Where(f => f.Boot), (name, type) => GetFilesFromFolder(internalBootFolder, name, ".json"));
+			//ReadJson(Serializer.Fields.Where(f => f.Boot), (name, type) => GetFilesFromFolder(bootFolder, name, ".json"));
+			//ReadJson(Serializer.Fields.Where(f => f.Boot), (name, type) => GetFilesFromFolder(internalBootFolder, name, ".json"));
 		}
 
 		public override void LoadAllConst()

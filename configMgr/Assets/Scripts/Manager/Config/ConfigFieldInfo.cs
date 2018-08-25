@@ -28,7 +28,7 @@ namespace Kernel.Config
             }
         }
 
-        public ConfigFieldInfo(string name, Type configType, Type elemType, Mode mode, bool loadAll, string key, bool boot)
+        public ConfigFieldInfo(string name, Type configType, Type elemType, Mode mode, bool loadAll, string key)
         {
             ConfigType = configType;
             Name = name;
@@ -36,7 +36,6 @@ namespace Kernel.Config
             FieldMode = mode;
             LoadAll = loadAll;
             Key = key;
-            Boot = boot;
         }
     }
 }

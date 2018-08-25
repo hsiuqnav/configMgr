@@ -34,7 +34,7 @@ namespace Kernel.Config
 		public override void LoadAllConfig(bool bootOnly = false)
 		{
 			ResetConfigData();
-			ReadXML(bootOnly ? Serializer.Fields.Where(f => f.Boot) : Serializer.Fields, (name, type) => GetFilesFromFolder(folder, name, ".xml"));
+			ReadXML(Serializer.Fields, (name, type) => GetFilesFromFolder(folder, name, ".xml"));
 		}
 
 		public override void LoadAllConst()
@@ -220,14 +220,7 @@ namespace Kernel.Config
 			if (valueType != null && valueType.BaseType != null && valueType.BaseType.Name == valueType.Name)
 			{
 				overrides = new XmlAttributeOverrides();
-				if (Serializer.IsLuaSerializer)
-				{
-					overrides.Add(valueType.BaseType, new XmlAttributes { XmlType = new XmlTypeAttribute(valueType.BaseType.Name + "Base") });
-				}
-				else
-				{
-					overrides.Add(valueType, new XmlAttributes { XmlType = new XmlTypeAttribute(valueType.Name + "Sub") });
-				}
+				overrides.Add(valueType, new XmlAttributes { XmlType = new XmlTypeAttribute(valueType.Name + "Sub") });
 			}
 
 			if (TypeUtil.IsDictionary(fieldType))
@@ -283,14 +276,7 @@ namespace Kernel.Config
 			if (valueType != null && valueType.BaseType != null && valueType.BaseType.Name == valueType.Name)
 			{
 				overrides = new XmlAttributeOverrides();
-				if (Serializer.IsLuaSerializer)
-				{
-					overrides.Add(valueType.BaseType, new XmlAttributes { XmlType = new XmlTypeAttribute(valueType.BaseType.Name + "Base") });
-				}
-				else
-				{
-					overrides.Add(valueType, new XmlAttributes { XmlType = new XmlTypeAttribute(valueType.Name + "Sub") });
-				}
+				overrides.Add(valueType, new XmlAttributes { XmlType = new XmlTypeAttribute(valueType.Name + "Sub") });
 			}
 
 			if (TypeUtil.IsDictionary(type))

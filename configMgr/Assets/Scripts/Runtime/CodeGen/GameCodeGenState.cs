@@ -65,7 +65,7 @@ namespace Alche.Runtime
 				ConfigAttribute attribute = null;
 				Type type = allTypes[i];
 				if ((type.Namespace == null || !type.Namespace.StartsWith("GeneratedCode")) &&
-					(attribute = TypeUtil.GetAttribute<ConfigAttribute>(type)) != null && attribute.ExportToCS && !type.IsEnum
+					(attribute = TypeUtil.GetAttribute<ConfigAttribute>(type)) != null && !type.IsEnum
 					&& IsTargetNamespace(type.Namespace))
 				{
 					type = attribute.GetConfigType(type);

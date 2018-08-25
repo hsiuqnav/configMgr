@@ -5,10 +5,10 @@ using System.Reflection;
 
 namespace Kernel.Lang.Attribute
 {
-	public class RefIdAttribute : ValidateAttribute
+	public class RefKeyAttributeAttribute : ValidateAttribute
 	{
 		public Type TargetConfType = null; // 目标Config
-		public RefIdAttribute(Type TargetConfType)
+		public RefKeyAttributeAttribute(Type TargetConfType)
 		{
 			this.TargetConfType = TargetConfType;
 		}
@@ -28,7 +28,7 @@ namespace Kernel.Lang.Attribute
 			while (e.MoveNext())
 			{
 				var targetConfValue = e.Value;
-				var targetConfFieldValue = GetTargetConfId(TargetConfType, targetConfValue);
+				var targetConfFieldValue = TypeUtil.FindConfigKeyValue(TargetConfType, targetConfValue);
 				if (targetConfFieldValue.Equals(fieldValue))
 				{
 					return true;
@@ -46,28 +46,14 @@ namespace Kernel.Lang.Attribute
 						break;
 					}
 				}
-				Console.WriteLine("{0}.xml refId field {1} {2} doesn't found in target {3}",
+				Console.WriteLine("{0}.xml element id {1}, refIdField({2}) {3} doesn't found in target {4}",
 					name,
+					TypeUtil.FindConfigKeyValue(configType, configValue),
 					fieldInfo.Name,
 					fieldValue,
 					string.IsNullOrEmpty(targetConfName) ? TargetConfType.ToString() : targetConfName);
 			}
 			return false;
-		}
-
-		private object GetTargetConfId(Type t, object v)
-		{
-			var serializeFields = TypeUtil.GetSerializedFields(t);
-			for(var i = 0; i < serializeFields.Count; ++i)
-			{
-				var field = serializeFields[i];
-				var attri = TypeUtil.GetCustomAttribute<IdAttribute>(field, false);
-				if (attri != null)
-				{
-					return field.GetValue(v);
-				}
-			}
-			return null;
 		}
 	}
 }

@@ -21,10 +21,11 @@ namespace GeneratedCode
 			if(d == null) d = new Config.ConfHero();
 			d.Attack = o.ReadSingle();
 			d.BirthDay = TimeUtil.CTimeToUtcDate(o.ReadInt64());
-			d.HeroDesc = StringSerializer.Read(o, d.HeroDesc as string) as string;
-			d.HeroName = StringSerializer.Read(o, d.HeroName as string) as string;
+			d.Desc = StringSerializer.Read(o, d.Desc as string) as string;
 			d.Hp = o.ReadSingle();
 			d.Id = o.ReadInt32();
+			d.Name = StringSerializer.Read(o, d.Name as string) as string;
+			d.PrefabPath = StringSerializer.Read(o, d.PrefabPath as string) as string;
 			d.Quality = (Config.QualificationType)o.ReadInt32();
 			return d;
 		}
@@ -41,10 +42,11 @@ namespace GeneratedCode
 			
 			o.Write(d.Attack);
 			o.Write((long)TimeUtil.LocalDateToCTime(d.BirthDay));
-			StringSerializer.Write(o, d.HeroDesc);
-			StringSerializer.Write(o, d.HeroName);
+			StringSerializer.Write(o, d.Desc);
 			o.Write(d.Hp);
 			o.Write(d.Id);
+			StringSerializer.Write(o, d.Name);
+			StringSerializer.Write(o, d.PrefabPath);
 			o.Write((int)d.Quality);
 		}
 	}

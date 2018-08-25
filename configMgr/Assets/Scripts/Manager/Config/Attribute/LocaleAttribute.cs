@@ -13,14 +13,14 @@ namespace Kernel.Lang.Attribute
 			{
 				using(var block = new ConsoleOutputErrorBlock())
 				{
-					Console.WriteLine("{0}.xml 发现不存在的locale", name);
+					Console.WriteLine("{0}.xml elementId {1} 发现不存在的locale", name, TypeUtil.FindConfigKeyValue(configType, configValue));
 				}
 			}
 			if (!Locale.ContainsKey(key))
 			{
 				using (var block = new ConsoleOutputErrorBlock())
 				{
-					Console.WriteLine("{0}.xml 发现不存在的locale {1}", name, fieldValue);
+					Console.WriteLine("{0}.xml elementId {1} 发现不存在的locale {2}", name, TypeUtil.FindConfigKeyValue(configType, configValue), fieldValue);
 				}
 			}
 			return true;

@@ -28,6 +28,11 @@ namespace Alche.Runtime
 			{
 				Logger.Info(action.ToString());
 			}
+			var heroSkin = ConfigManager.Instance.GetConfig<ConfHeroSkin>(2);
+			if (heroSkin != null)
+			{
+				Logger.Info(heroSkin.ToString());
+			}
 		}
 	}
 }

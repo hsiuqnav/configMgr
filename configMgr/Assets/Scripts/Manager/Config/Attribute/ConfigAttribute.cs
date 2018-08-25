@@ -15,29 +15,12 @@ namespace Kernel.Config
 	{
 		public string Comment;
 		public string Name;
-		public ConfigExportPolicy ExportPolicy = ConfigExportPolicy.EXPORT_TO_CS;
 		public bool Boot;
 		public bool ExportXmlExample = true;
 
 		public virtual Type GetConfigType(Type classType)
 		{
 			return classType;
-		}
-
-		public bool ExportToLua
-		{
-			get
-			{
-				return ExportPolicy == ConfigExportPolicy.EXPORT_TO_LUA || ExportPolicy == ConfigExportPolicy.EXPORT_TO_BOTH;
-			}
-		}
-
-		public bool ExportToCS
-		{
-			get
-			{
-				return ExportPolicy == ConfigExportPolicy.EXPORT_TO_CS || ExportPolicy == ConfigExportPolicy.EXPORT_TO_BOTH;
-			}
 		}
 	}
 
@@ -51,7 +34,7 @@ namespace Kernel.Config
 	public class DictionaryConfigAttribute : ConfigAttribute
 	{
 		public string Key = "Id";
-		public bool LoadAll;
+		public bool LoadAll = true;
 
 		public override Type GetConfigType(Type classType)
 		{

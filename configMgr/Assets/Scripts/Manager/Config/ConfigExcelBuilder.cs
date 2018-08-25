@@ -551,15 +551,6 @@ namespace Kernel.Config
 			if(!string.IsNullOrEmpty(key))
 			{
 				var keyField = fields.FirstOrDefault(f => f.Name.ToLower() == key.ToLower());
-				if(keyField == null)
-				{
-					keyField = fields.FirstOrDefault(f => TypeUtil.GetAttribute<IdAttribute>(f) != null);
-					if(keyField == null)
-					{
-						throw new Exception("Cannot find key field of conf " + confType);
-					}
-				}
-
 				fields.Remove(keyField);
 				fields.Insert(0, keyField);
 			}

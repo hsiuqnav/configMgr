@@ -4,11 +4,11 @@
 	<ConfHeroSkin>
 		<Id>1</Id>
 		<HeroId>107</HeroId>
-		<Desc>守望者</Desc>
+		<Desc>Hero.Skin.Tyrande.1</Desc>
 	</ConfHeroSkin>
 	<ConfHeroSkin>
 		<Id>2</Id>
 		<HeroId>107</HeroId>
-		<Desc>鹰眼</Desc>
+		<Desc>Hero.Skin.Tyrande.2</Desc>
 	</ConfHeroSkin>
 </ConfHeroSkins>

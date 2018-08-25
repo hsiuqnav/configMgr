@@ -5,20 +5,10 @@ using System;
 
 namespace Config
 {
-	[DictionaryConfig(Name = "heroes", ExportPolicy = ConfigExportPolicy.EXPORT_TO_BOTH, LoadAll = true, Key = "Id")]
-	public class ConfHero
+	[DictionaryConfig(Name = "heroes", Key = "Id")]
+	[XmlDerivedFrom(typeof(ConfCharacter))]
+	public class ConfHero : ConfCharacter
 	{
-		[Comment("Id")]
-		[Id]
-		public int Id;
-
-		[Comment("英雄名")]
-		public string HeroName;
-
-		[Comment("英雄描述")]
-		[Locale]
-		public string HeroDesc;
-
 		[Comment("英雄血量")]
 		public float Hp;
 
@@ -33,7 +23,7 @@ namespace Config
 
 		public override string ToString()
 		{
-			return string.Format("Id : {0}, HeroName : {1}, HeroDesc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, HeroName, Locale.L(HeroDesc), Hp, Attack, BirthDay);
+			return string.Format("Id : {0}, Name : {1}, Desc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, Name, Locale.L(Desc), Hp, Attack, BirthDay);
 		}
 	}
 }

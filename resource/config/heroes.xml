@@ -3,8 +3,8 @@
 <ConfHeros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ConfHero>
 		<Id>107</Id>
-		<HeroName>泰兰德</HeroName>
-		<HeroDesc>Hero.Desc.Tyrande</HeroDesc>
+		<Name>泰兰德</Name>
+		<Desc>Hero.Desc.Tyrande</Desc>
 		<Hp>635</Hp>
 		<Attack>30</Attack>
 		<BirthDay>1981-01-01T00:00:00</BirthDay>
@@ -12,8 +12,8 @@
 	</ConfHero>
 	<ConfHero>
 		<Id>108</Id>
-		<HeroName>迪亚波罗</HeroName>
-		<HeroDesc>Hero.Desc.Diablo</HeroDesc>
+		<Name>迪亚波罗</Name>
+		<Desc>Hero.Desc.Diablo</Desc>
 		<Hp>1060</Hp>
 		<Attack>49</Attack>
 		<BirthDay>1986-05-15T08:00:00</BirthDay>
@@ -21,8 +21,8 @@
 	</ConfHero>
 	<ConfHero>
 		<Id>109</Id>
-		<HeroName>弗斯塔德</HeroName>
-		<HeroDesc>Hero.Desc.Falstad</HeroDesc>
+		<Name>弗斯塔德</Name>
+		<Desc>Hero.Desc.Falstad</Desc>
 		<Hp>710</Hp>
 		<Attack>34</Attack>
 		<BirthDay>2011-11-01T11:00:00</BirthDay>

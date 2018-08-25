@@ -2,8 +2,9 @@
 <ConfHeros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ConfHero>
     <Id>0</Id>
-    <HeroName> </HeroName>
-    <HeroDesc> </HeroDesc>
+    <Name> </Name>
+    <Desc> </Desc>
+    <PrefabPath> </PrefabPath>
     <Hp>0</Hp>
     <Attack>0</Attack>
     <BirthDay>0001-01-01T00:00:00</BirthDay>
@@ -11,8 +12,9 @@
   </ConfHero>
   <ConfHero>
     <Id>0</Id>
-    <HeroName> </HeroName>
-    <HeroDesc> </HeroDesc>
+    <Name> </Name>
+    <Desc> </Desc>
+    <PrefabPath> </PrefabPath>
     <Hp>0</Hp>
     <Attack>0</Attack>
     <BirthDay>0001-01-01T00:00:00</BirthDay>
