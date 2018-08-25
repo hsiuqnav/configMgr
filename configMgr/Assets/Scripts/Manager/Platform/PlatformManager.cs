@@ -84,6 +84,11 @@ namespace Kernel
 			return PlatformModule.ReadAllText(path, encoding);
 		}
 
+		public string[] ReadAllLines(string path, Encoding encoding = null)
+		{
+			return PlatformModule.ReadAllLines(path, encoding);
+		}
+
 		public void WriteAllText(string content, string path, Encoding encoding = null)
 		{
 			CreateParentDirectoryIfNeed(path);
@@ -93,6 +98,23 @@ namespace Kernel
 		public void RemoveReadonlyAttribute(string file)
 		{
 			PlatformModule.RemoveReadonlyAttribute(file);
+		}
+
+		public Platform Platform
+		{
+			get
+			{
+				return PlatformModule.Platform;
+			}
+		}
+
+
+		public bool IsEditor
+		{
+			get
+			{
+				return Platform == Platform.WINDOWS;
+			}
 		}
 
 		protected override void OnInit()

@@ -112,6 +112,15 @@ namespace Kernel.Game
 			return Path.Combine(PathModule.ExternalFolder, relativePath.TrimStart('/', '\\'));
 		}
 
+		public bool IsExternalPath(string path)
+		{
+			if (string.IsNullOrEmpty(path))
+			{
+				return false;
+			}
+			return path.StartsWith(PathModule.ExternalFolder, StringComparison.Ordinal);
+		}
+
 		protected override void OnInit()
 		{
 			PathModule = AddModule<BasePathModule>();

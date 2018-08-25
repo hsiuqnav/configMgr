@@ -18,6 +18,13 @@ namespace Kernel.Game
 		private const string EXTERNAL_XML_EXAMPLE_FOLDER = "{ExternalFolder}/../config_example";
 
 
+		public string Locale
+		{
+			get
+			{
+				return "zhcn";
+			}
+		}
 
 		public virtual string BootConfigFolder
 		{

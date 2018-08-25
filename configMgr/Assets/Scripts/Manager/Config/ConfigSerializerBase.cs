@@ -49,11 +49,11 @@ namespace Kernel.Config
 			}
 		}
 
-		public void Validate()
+		public bool Validate()
 		{
 			if (Fields == null || Fields.Length == 0)
 			{
-				return;
+				return true;
 			}
 			for(var i = 0; i < Fields.Length; ++i)
 			{
@@ -76,12 +76,13 @@ namespace Kernel.Config
 							var fieldValue = serializeFields[j].GetValue(configValue);
 							if (!attri.Validate(serializeFields[j], fieldValue, f.ElemType, configValue, f.Name, Fields))
 							{
-								return;
+								return false;
 							}
 						}
 					}
 				}
 			}
+			return true;
 		}
 
 		public void WriteToBinary(BinWriter writer)

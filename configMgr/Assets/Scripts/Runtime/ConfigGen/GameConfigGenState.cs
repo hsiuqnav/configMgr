@@ -47,8 +47,10 @@ namespace Alche.Runtime
 			using (BinWriter o = new BinWriter(PlatformManager.Instance.OpenWrite(PathManager.Instance.ExternalBinaryConfig), Encoding.UTF8))
 			{
 				ConfigManager.Instance.LoadAllConfig();
-				serializer.Validate();
-				//serializer.WriteToBinary(o);
+				if (serializer.Validate())
+				{
+					serializer.WriteToBinary(o);
+				}
 			}
 			PlatformManager.Instance.ClearDirectory(PathManager.Instance.ExternalXmlExampleFolder);
 			new ConfigExampleBuilder().WriteExampleConfig(serializer, PathManager.Instance.ExternalXmlExampleFolder);

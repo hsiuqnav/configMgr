@@ -1,4 +1,5 @@
-﻿using Kernel.Config;
+﻿using Kernel;
+using Kernel.Config;
 using Kernel.Lang.Attribute;
 using System;
 
@@ -15,6 +16,7 @@ namespace Config
 		public string HeroName;
 
 		[Comment("英雄描述")]
+		[Locale]
 		public string HeroDesc;
 
 		[Comment("英雄血量")]
@@ -28,7 +30,7 @@ namespace Config
 
 		public override string ToString()
 		{
-			return string.Format("Id : {0}, HeroName : {1}, HeroDesc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, HeroName, HeroDesc, Hp, Attack, BirthDay);
+			return string.Format("Id : {0}, HeroName : {1}, HeroDesc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, HeroName, Locale.L(HeroDesc), Hp, Attack, BirthDay);
 		}
 	}
 }

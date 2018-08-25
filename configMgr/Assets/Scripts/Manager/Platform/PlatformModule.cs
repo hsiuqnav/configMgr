@@ -240,6 +240,19 @@ namespace Kernel
 
 		}
 
+		public virtual string[] ReadAllLines(string path, Encoding encoding = null)
+		{
+			try
+			{
+				return File.ReadAllLines(path);
+			}
+			catch
+			{
+				Logger.Warn("ReadAllLines failed:{0}", path);
+			}
+			return new string[0];
+		}
+
 		private static void RemoveAttribute(string file, FileAttributes attr)
 		{
 			try

@@ -264,6 +264,7 @@ namespace Kernel.Config
 			readerModule = AddModule<ConfigReaderModule>(new BootConfigReaderModule(PathManager.Instance.BootConfigFolder,
 				PathManager.Instance.InternalBootConfigFolder));
 			readerModule.SetSerializer(serializer);
+			LocaleReader.AddLocaleFromFolder(PathManager.Instance.ExternalLocaleFolder);
 		}
 
 		protected override void OnBoot()

@@ -31,11 +31,7 @@ namespace Kernel
 		{
 			get
 			{
-#if UNITY_EDITOR_OSX
-				return Platform.OSX;
-#else
 				return Platform.WINDOWS;
-#endif
 			}
 		}
 

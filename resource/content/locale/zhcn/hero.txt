@@ -1,0 +1,6 @@
+Hero.Desc.Tyrande
+月神殿的大祭司、月神的代言人、达纳苏斯的统治者、万年的灰谷保卫者
+Hero.Desc.Diablo
+恐惧魔王、地狱三魔神之一
+Hero.Desc.Falstad
+蛮锤氏族的大族长、铁炉堡三锤议会的成员
