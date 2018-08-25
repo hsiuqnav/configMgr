@@ -17,7 +17,7 @@ namespace GeneratedCode
 		
 		public override ConfigFieldInfo[] Fields { get { return fields; } }
 		
-		public override string Hash { get { return "2b4047b87596d5c04cea09254656dee0"; } }
+		public override string Hash { get { return "58633842c51fa21d5c5949a4c17440fa"; } }
 		
 		private static readonly Dictionary<Type, IConfigSerializer> serializers = new Dictionary<Type, IConfigSerializer>
 		{

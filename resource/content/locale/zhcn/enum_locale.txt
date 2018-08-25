@@ -1,1 +1,8 @@
-﻿
+﻿QualificationType.1
+优秀
+QualificationType.2
+精良
+QualificationType.3
+史诗
+QualificationType.4
+传说

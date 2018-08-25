@@ -1,0 +1,5 @@
+﻿[QualificationType] Quality
+	1    :  GREEN  // 优秀
+	2    :  BLUE  // 精良
+	3    :  PURPLE  // 史诗
+	4    :  ORANGE  // 传说

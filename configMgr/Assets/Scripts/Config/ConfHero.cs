@@ -28,6 +28,9 @@ namespace Config
 		[Comment("生日")]
 		public DateTime BirthDay;
 
+		[Comment("英雄品质")]
+		public QualificationType Quality;
+
 		public override string ToString()
 		{
 			return string.Format("Id : {0}, HeroName : {1}, HeroDesc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, HeroName, Locale.L(HeroDesc), Hp, Attack, BirthDay);

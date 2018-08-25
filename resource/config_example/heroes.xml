@@ -7,6 +7,7 @@
     <Hp>0</Hp>
     <Attack>0</Attack>
     <BirthDay>0001-01-01T00:00:00</BirthDay>
+    <Quality>GREEN</Quality>
   </ConfHero>
   <ConfHero>
     <Id>0</Id>
@@ -15,5 +16,6 @@
     <Hp>0</Hp>
     <Attack>0</Attack>
     <BirthDay>0001-01-01T00:00:00</BirthDay>
+    <Quality>GREEN</Quality>
   </ConfHero>
 </ConfHeros>

@@ -25,6 +25,7 @@ namespace GeneratedCode
 			d.HeroName = StringSerializer.Read(o, d.HeroName as string) as string;
 			d.Hp = o.ReadSingle();
 			d.Id = o.ReadInt32();
+			d.Quality = (Config.QualificationType)o.ReadInt32();
 			return d;
 		}
 		
@@ -44,6 +45,7 @@ namespace GeneratedCode
 			StringSerializer.Write(o, d.HeroName);
 			o.Write(d.Hp);
 			o.Write(d.Id);
+			o.Write((int)d.Quality);
 		}
 	}
 }
