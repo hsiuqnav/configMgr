@@ -1,7 +1,9 @@
 ﻿using Kernel;
 using Kernel.Config;
+using Kernel.Engine;
 using Kernel.Lang.Attribute;
 using System;
+using System.Text;
 
 namespace Config
 {
@@ -21,9 +23,18 @@ namespace Config
 		[Comment("英雄品质")]
 		public QualificationType Quality;
 
+		[Comment("可选颜色")]
+		public Color[] AvailableColors;
+
 		public override string ToString()
 		{
-			return string.Format("Id : {0}, Name : {1}, Desc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, Name, Locale.L(Desc), Hp, Attack, BirthDay);
+			var sb = new StringBuilder();
+			sb.AppendFormat("Id : {0}, Name : {1}, Desc : {2}, Hp : {3}, Attack : {4}, BirthDay : {5}", Id, Name, Locale.L(Desc), Hp, Attack, BirthDay);
+			for(var i = 0; i < AvailableColors.Length; ++i)
+			{
+				sb.AppendFormat(" AvailableColor{0} : {1}", i + 1, AvailableColors[i].ToString());
+			}
+			return sb.ToString();
 		}
 	}
 }

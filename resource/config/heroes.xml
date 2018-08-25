@@ -3,29 +3,92 @@
 <ConfHeros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ConfHero>
 		<Id>107</Id>
-		<Name>泰兰德</Name>
-		<Desc>Hero.Desc.Tyrande</Desc>
 		<Hp>635</Hp>
 		<Attack>30</Attack>
 		<BirthDay>1981-01-01T00:00:00</BirthDay>
 		<Quality>ORANGE</Quality>
+		<AvailableColors>
+			<Color>
+				<r>1</r>
+				<g>0.27058823529411763</g>
+				<b>0</b>
+				<a>1</a>
+			</Color>
+			<Color>
+				<r>0.5294117647058824</r>
+				<g>0.807843137254902</g>
+				<b>0.9215686274509803</b>
+				<a>1</a>
+			</Color>
+			<Color>
+				<r>1</r>
+				<g>0.0784313725490196</g>
+				<b>0.5764705882352941</b>
+				<a>1</a>
+			</Color>
+		</AvailableColors>
+		<Name>泰兰德</Name>
+		<Desc>Hero.Desc.Tyrande</Desc>
+		<PrefabPath>tyrande.prefab</PrefabPath>
 	</ConfHero>
 	<ConfHero>
 		<Id>108</Id>
-		<Name>迪亚波罗</Name>
-		<Desc>Hero.Desc.Diablo</Desc>
 		<Hp>1060</Hp>
 		<Attack>49</Attack>
 		<BirthDay>1986-05-15T08:00:00</BirthDay>
 		<Quality>ORANGE</Quality>
+		<AvailableColors>
+			<Color>
+				<r>0.5294117647058824</r>
+				<g>0.807843137254902</g>
+				<b>0.9215686274509803</b>
+				<a>1</a>
+			</Color>
+			<Color>
+				<r>1</r>
+				<g>0.0784313725490196</g>
+				<b>0.5764705882352941</b>
+				<a>1</a>
+			</Color>
+			<Color>
+				<r>1</r>
+				<g>0.27058823529411763</g>
+				<b>0</b>
+				<a>1</a>
+			</Color>
+		</AvailableColors>
+		<Name>迪亚波罗</Name>
+		<Desc>Hero.Desc.Diablo</Desc>
+		<PrefabPath>diablo.prefab</PrefabPath>
 	</ConfHero>
 	<ConfHero>
 		<Id>109</Id>
-		<Name>弗斯塔德</Name>
-		<Desc>Hero.Desc.Falstad</Desc>
 		<Hp>710</Hp>
 		<Attack>34</Attack>
 		<BirthDay>2011-11-01T11:00:00</BirthDay>
 		<Quality>PURPLE</Quality>
+		<AvailableColors>
+			<Color>
+				<r>1</r>
+				<g>0.0784313725490196</g>
+				<b>0.5764705882352941</b>
+				<a>1</a>
+			</Color>
+			<Color>
+				<r>1</r>
+				<g>0.27058823529411763</g>
+				<b>0</b>
+				<a>1</a>
+			</Color>
+			<Color>
+				<r>0.5294117647058824</r>
+				<g>0.807843137254902</g>
+				<b>0.9215686274509803</b>
+				<a>1</a>
+			</Color>
+		</AvailableColors>
+		<Name>弗斯塔德</Name>
+		<Desc>Hero.Desc.Falstad</Desc>
+		<PrefabPath>falstad.prefab</PrefabPath>
 	</ConfHero>
 </ConfHeros>

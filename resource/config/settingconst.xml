@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConfSettingConst xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<UseAA>true</UseAA>
+	<Locale>zhcn</Locale>
+	<Version>1.0.0.1</Version>
+</ConfSettingConst>

@@ -33,6 +33,11 @@ namespace Alche.Runtime
 			{
 				Logger.Info(heroSkin.ToString());
 			}
+			var confSetting = ConfigManager.Instance.GetConfig<ConfSettingConst>();
+			if (confSetting != null)
+			{
+				Logger.Info(confSetting.ToString());
+			}
 		}
 	}
 }

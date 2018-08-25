@@ -9,6 +9,20 @@
     <Attack>0</Attack>
     <BirthDay>0001-01-01T00:00:00</BirthDay>
     <Quality>GREEN</Quality>
+    <AvailableColors>
+      <Color>
+        <r>0</r>
+        <g>0</g>
+        <b>0</b>
+        <a>0</a>
+      </Color>
+      <Color>
+        <r>0</r>
+        <g>0</g>
+        <b>0</b>
+        <a>0</a>
+      </Color>
+    </AvailableColors>
   </ConfHero>
   <ConfHero>
     <Id>0</Id>
@@ -19,5 +33,19 @@
     <Attack>0</Attack>
     <BirthDay>0001-01-01T00:00:00</BirthDay>
     <Quality>GREEN</Quality>
+    <AvailableColors>
+      <Color>
+        <r>0</r>
+        <g>0</g>
+        <b>0</b>
+        <a>0</a>
+      </Color>
+      <Color>
+        <r>0</r>
+        <g>0</g>
+        <b>0</b>
+        <a>0</a>
+      </Color>
+    </AvailableColors>
   </ConfHero>
 </ConfHeros>

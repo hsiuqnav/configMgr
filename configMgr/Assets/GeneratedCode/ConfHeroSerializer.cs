@@ -20,6 +20,7 @@ namespace GeneratedCode
 			
 			if(d == null) d = new Config.ConfHero();
 			d.Attack = o.ReadSingle();
+			d.AvailableColors = ArrayColorSerializer.Read(o, d.AvailableColors as Kernel.Engine.Color[]);
 			d.BirthDay = TimeUtil.CTimeToUtcDate(o.ReadInt64());
 			d.Desc = StringSerializer.Read(o, d.Desc as string) as string;
 			d.Hp = o.ReadSingle();
@@ -41,6 +42,7 @@ namespace GeneratedCode
 			if(d == null) return;
 			
 			o.Write(d.Attack);
+			ArrayColorSerializer.Write(o, d.AvailableColors);
 			o.Write((long)TimeUtil.LocalDateToCTime(d.BirthDay));
 			StringSerializer.Write(o, d.Desc);
 			o.Write(d.Hp);

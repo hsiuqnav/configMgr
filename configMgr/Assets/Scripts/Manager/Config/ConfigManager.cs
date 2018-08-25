@@ -261,18 +261,13 @@ namespace Kernel.Config
 
 		protected override void OnInit()
 		{
-			readerModule = AddModule<ConfigReaderModule>(new BootConfigReaderModule(PathManager.Instance.BootConfigFolder,
-				PathManager.Instance.InternalBootConfigFolder));
-			readerModule.SetSerializer(serializer);
 			LocaleReader.AddLocaleFromFolder(PathManager.Instance.ExternalLocaleFolder);
 		}
 
 		protected override void OnBoot()
 		{
-			var oldModule = readerModule;
 			readerModule = AddModule<ConfigReaderModule>();
 			readerModule.SetSerializer(serializer);
-			readerModule.CopyConfigData(oldModule);
 		}
 
 		protected override void OnShutdown()
