@@ -23,6 +23,11 @@ namespace Alche.Runtime
 			{
 				Logger.Info(hero.ToString());
 			}
+			var action = ConfigManager.Instance.GetConfig<ConfAction>("Jump");
+			if (action != null)
+			{
+				Logger.Info(action.ToString());
+			}
 		}
 	}
 }
