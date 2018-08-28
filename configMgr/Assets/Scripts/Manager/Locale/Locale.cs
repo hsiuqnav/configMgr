@@ -9,7 +9,7 @@ namespace Kernel
 	{
 		public static bool disabled;
 
-		// 此处已经做了内存优化： 
+		// 此处已经做了内存优化：
 		// 1. 使用 hashedLocales 为主，仅在碰撞情况下使用unHashedLocales
 		// 2. 对value进行 intern
 		// 在实际项目44000个数据测试中，内存占用由 7M -> 4.55M；对于第一项测试，实际碰撞为0。

@@ -61,6 +61,22 @@ namespace Kernel
 			}
 		}
 
+		public virtual bool CreateDirectoryIfNeed(string folder)
+		{
+			try
+			{
+				if (!Directory.Exists(folder))
+				{
+					Directory.CreateDirectory(folder);
+				}
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
 		public virtual bool ClearDirectory(string folder, string extension = null)
 		{
 			try
@@ -184,7 +200,7 @@ namespace Kernel
 
 		public virtual void QuitGame()
 		{
-			
+
 		}
 
 		public virtual string ReadAllText(string path, Encoding encoding = null)
@@ -272,7 +288,7 @@ namespace Kernel
 				// Empty
 			}
 		}
-		
+
 		private void GetFilesRecursive(string path, string searchPattern, List<string> ret)
 		{
 			var paths = new Queue<string>();

@@ -4,7 +4,7 @@ using System;
 
 namespace Alche.Runtime
 {
-	public class CodeGenApp : CommandLineApp
+	public partial class CodeGenApp : CommandLineApp
 	{
 		private readonly string targetFolder;
 		private readonly string[] targetNamespaces;
@@ -29,7 +29,7 @@ namespace Alche.Runtime
 
 		public CodeGenApp()
 		{
-			System.Console.WriteLine("Register CommandLinePathModule");
+			Console.WriteLine("Register CommandLinePathModule");
 			ModuleManager.Instance.RegisterModule(typeof(BasePathModule), () => new CommandLinePathModule("../resource/content"));
 		}
 

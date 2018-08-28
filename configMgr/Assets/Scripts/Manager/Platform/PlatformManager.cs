@@ -44,6 +44,11 @@ namespace Kernel
 			return PlatformModule.CreateParentDirectoryIfNeed(file);
 		}
 
+		public bool CreateDirectoryIfNeed(string folder)
+		{
+			return PlatformModule.CreateDirectoryIfNeed(folder);
+		}
+
 		public bool ClearDirectory(string path, string extension = null)
 		{
 			return PlatformModule.ClearDirectory(path, extension);
