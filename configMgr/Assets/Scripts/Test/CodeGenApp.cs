@@ -2,7 +2,9 @@
 using Kernel.Game;
 using Kernel.Runtime;
 using System.IO;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace Alche.Runtime
 {
@@ -31,6 +33,6 @@ namespace Alche.Runtime
 				app.LateUpdate();
 			}
 		}
-	}
 #endif
+	}
 }

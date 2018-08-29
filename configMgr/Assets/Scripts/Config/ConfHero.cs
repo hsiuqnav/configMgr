@@ -8,7 +8,6 @@ using System.Text;
 namespace Config
 {
 	[DictionaryConfig(Name = "heroes", Key = "Id")]
-	[XmlDerivedFrom(typeof(ConfCharacter))]
 	public class ConfHero : ConfCharacter
 	{
 		[Comment("英雄血量")]

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Kernel.Config
 {
@@ -22,6 +24,22 @@ namespace Kernel.Config
             if (root != null && !root.IsEnum)
             {
                 root.IsEntry = true;
+            }
+        }
+
+        public static void test(Node n, int indentNum)
+        {
+            var sb = new StringBuilder();
+            foreach(var child in n.Children)
+            {
+                sb.Length = 0;
+                for(var i = 0; i < indentNum; ++i)
+                {
+                    sb.Append("    ");
+                }
+                sb.AppendFormat("child[{0}]\r\n", child.TypeName);
+                Logger.Info(sb.ToString());
+                test(child, indentNum + 1);
             }
         }
 
