@@ -11,6 +11,7 @@ namespace Config
 		public string Name;
 
 		[Comment("描述")]
+		[Locale]
 		public string Desc;
 
 		[Comment("资源路径")]
