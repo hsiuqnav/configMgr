@@ -34,7 +34,7 @@ namespace Kernel.Config
 	public class DictionaryConfigAttribute : ConfigAttribute
 	{
 		public string Key = "Id";
-		public bool LoadAll = true;
+		public bool LoadAll = false;
 
 		public override Type GetConfigType(Type classType)
 		{

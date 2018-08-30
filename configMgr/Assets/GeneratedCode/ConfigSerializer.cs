@@ -11,9 +11,9 @@ namespace GeneratedCode
 		private static readonly ConfigFieldInfo[] fields =
 		{
 			new ConfigFieldInfo("settingconst", typeof(Config.ConfSettingConst), typeof(Config.ConfSettingConst), ConfigFieldInfo.Mode.CONST, false, ""),
-			new ConfigFieldInfo("heroes", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHero>), typeof(Config.ConfHero), ConfigFieldInfo.Mode.KEY_VALUE, true, "Id"),
-			new ConfigFieldInfo("heroskins", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHeroSkin>), typeof(Config.ConfHeroSkin), ConfigFieldInfo.Mode.KEY_VALUE, true, "Id"),
-			new ConfigFieldInfo("actions", typeof(System.Collections.Generic.Dictionary<string,Config.ConfAction>), typeof(Config.ConfAction), ConfigFieldInfo.Mode.KEY_VALUE, true, "ActionName"),
+			new ConfigFieldInfo("heroes", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHero>), typeof(Config.ConfHero), ConfigFieldInfo.Mode.KEY_VALUE, false, "Id"),
+			new ConfigFieldInfo("heroskins", typeof(System.Collections.Generic.Dictionary<int,Config.ConfHeroSkin>), typeof(Config.ConfHeroSkin), ConfigFieldInfo.Mode.KEY_VALUE, false, "Id"),
+			new ConfigFieldInfo("actions", typeof(System.Collections.Generic.Dictionary<string,Config.ConfAction>), typeof(Config.ConfAction), ConfigFieldInfo.Mode.KEY_VALUE, false, "ActionName"),
 		};
 		
 		public override ConfigFieldInfo[] Fields { get { return fields; } }
